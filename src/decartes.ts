@@ -2,7 +2,7 @@ import Vector from './lib/Vector';
 import Color from './lib/Color';
 import Camera from './lib/Camera';
 import Scene from './lib/Scene';
-import {Geometry, LineSegmentGeometry} from './lib/Geometries';
+import {LineSegmentGeometry} from './lib/Geometries';
 import {LineMaterial} from './lib/Materials';
 import {LineSegment, DrawObject} from './lib/DrawObjects';
 
@@ -11,7 +11,7 @@ export {
     Color,
     Camera,
     Scene,
-    Geometry, LineSegmentGeometry,
+    LineSegmentGeometry,
     LineMaterial,
     DrawObject, LineSegment
 };
@@ -21,7 +21,7 @@ export default {
     Color,
     Camera,
     Scene,
-    Geometry, LineSegmentGeometry,
+    LineSegmentGeometry,
     LineMaterial,
     DrawObject, LineSegment
 };

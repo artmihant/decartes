@@ -26,8 +26,8 @@ export default class Scene {
     setCanvas(canvasContainer: HTMLElement){
         canvasContainer.appendChild(this.canvas)
         this.ctx = this.canvas.getContext('2d');
-        let width  = canvasContainer.clientWidth;
-        let height = canvasContainer.clientHeight;
+        const width  = canvasContainer.clientWidth;
+        const height = canvasContainer.clientHeight;
 
         this.canvas.width  = width;
         this.canvas.height = height;

@@ -38,7 +38,7 @@ export default class Camera {
     }
 
     wheel(cursor: Point, factor: number){
-        let fixed = this.loc(cursor)
+        const fixed = this.loc(cursor)
         this.center.mul(factor).sub(fixed.times(factor-1))
         this.scale /= factor
     }

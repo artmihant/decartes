@@ -1,8 +1,8 @@
-import type {Geometry} from './Geometries'
+
 import {LineSegmentGeometry} from './Geometries'
 import {LineMaterial} from './Materials'
 import type Scene from './Scene'
-import type {Point, Material, LineMaterialConfig} from '../interfaces/Decartes'
+import type {Point, Material, LineMaterialConfig, Geometry} from '../interfaces/Decartes'
 import Vector from "./Vector"
 
 
@@ -21,7 +21,7 @@ export class DrawObject {
 
     draw(scene: Scene){
         if(scene.ctx){
-            let camera = scene.camera
+            const camera = scene.camera
             this.material.draw(scene.ctx)
             this.geometry.set_view_points(camera)
             this.geometry.draw(scene.ctx)
