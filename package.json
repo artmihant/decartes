@@ -1,0 +1,48 @@
+{
+  "name": "decartes",
+  "version": "0.0.1",
+  "description": "Descartes is a simple and fast canvas drawing engine.",
+  "main": "dist/decartes.js",
+  "types": "dist/decartes.d.ts",
+  "module": "dist/decartes.js",
+  "prepublish": "npm run build && npm run test",
+  "scripts": {
+    "dev": "webpack --env development --watch",
+    "build": "webpack --env production",
+    "test": "jest --env=jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artmihant/decartes.git"
+  },
+  "keywords": [
+    "canvas",
+    "typescript",
+    "geometry"
+  ],
+  "author": "Artem Antonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artmihant/decartes/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && npm run test"
+    }
+  },
+  "homepage": "https://github.com/artmihant/decartes#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@types/jest": "^29.2.5",
+    "babel-loader": "^9.1.2",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-webpack-plugin": "^3.2.0",
+    "husky": "^8.0.3",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
