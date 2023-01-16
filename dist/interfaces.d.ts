@@ -1,6 +1,6 @@
-import type Vector from '../lib/Vector';
-import type Color from '../lib/Color';
-import Camera from '../lib/Camera';
+import type Vector from './lib/Vector';
+import type Color from './lib/Color';
+import Camera from './lib/Camera';
 export type pair = [number, number];
 export type triple = [number, number, number];
 export type Point = pair | Vector;

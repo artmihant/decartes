@@ -1,4 +1,4 @@
-import type { triple } from '../interfaces/Decartes';
+import type { triple } from '../interfaces';
 export default class Color {
     r: number;
     g: number;

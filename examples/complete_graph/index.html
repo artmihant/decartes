@@ -1,0 +1,81 @@
+<!doctype html>
+
+<head>
+<script src="../../dist/index.js"></script>
+
+</head>
+<body>
+    <div id="canvas"
+    style="width:900px; height: 900px; margin: 10px; border: 1px solid #2c1d00">
+</div> 
+
+</body>
+
+<script>
+    const {Scene, Color, Vector, LineSegment} = decartes
+
+    let scene = new Scene()
+
+    let canvas = document.getElementById('canvas')
+
+    let N = 60
+
+    for(let k = 1; k <= N/2; k++){
+        for (let i = 0; i < N; i++){
+            let j = i+k
+
+            let c1 = new Color('#0000ff')
+            let c2 = new Color('#00ff00')
+
+            let a = new Vector([Math.cos(2*i*Math.PI/N), Math.sin(2*i*Math.PI/N)])
+            let b = new Vector([Math.cos(2*j*Math.PI/N), Math.sin(2*j*Math.PI/N)])
+
+            let lineColor = c1.mix(c2, 2*k/N)
+
+            scene.add(new LineSegment({a, b}, {
+                lineColor: lineColor,
+                lineWidth: 1
+            }))
+        }
+    }
+
+
+    scene.setCanvas(canvas)
+    scene.draw()
+    requestAnimationFrame(function animate(time) {
+        scene.draw()
+        requestAnimationFrame(animate);
+    })
+
+    let wheel = (e) => {
+        let cursor = [e.offsetX, e.offsetY]
+        if(e.deltaY > 0){
+            scene.camera.wheel(cursor, 1.1)
+        }else if(e.deltaY < 0){
+            scene.camera.wheel(cursor, 1/1.1)
+        }
+    }
+
+    canvas.addEventListener('wheel', wheel)
+
+    let mousedown = () => {
+
+        let move = (e) => {
+            scene.camera.move([e.movementX, e.movementY])
+        }
+
+        let moveStop = () => {
+            canvas.removeEventListener('mousemove', move)
+            canvas.removeEventListener('mouseup', moveStop)
+            canvas.removeEventListener('mouseout', moveStop)
+        }
+
+        canvas.addEventListener('mousemove', move)
+        canvas.addEventListener('mouseup', moveStop)
+        canvas.addEventListener('mouseout', moveStop)
+    }
+
+    canvas.addEventListener('mousedown', mousedown)
+
+
+</script>

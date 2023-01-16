@@ -5,8 +5,9 @@ import Scene from './lib/Scene';
 import {LineSegmentGeometry} from './lib/Geometries';
 import {LineMaterial} from './lib/Materials';
 import {LineSegment, DrawObject} from './lib/DrawObjects';
+import type {pair, triple, Point, Material, Geometry} from './interfaces';
 
-export {
+export {pair, triple, Point, Material, Geometry,
     Vector,
     Color,
     Camera,
@@ -14,8 +15,7 @@ export {
     LineSegmentGeometry,
     LineMaterial,
     DrawObject, LineSegment
-};
-
+}
 export default {
     Vector,
     Color,
@@ -25,3 +25,7 @@ export default {
     LineMaterial,
     DrawObject, LineSegment
 };
+
+// export function test(){
+//     return 1
+// }

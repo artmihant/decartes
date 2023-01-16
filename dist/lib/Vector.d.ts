@@ -1,4 +1,4 @@
-import type { pair, Point } from '../interfaces/Decartes';
+import type { pair, Point } from '../interfaces';
 export default class Vector {
     x: number;
     y: number;

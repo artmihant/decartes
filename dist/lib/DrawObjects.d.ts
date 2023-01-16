@@ -1,5 +1,5 @@
 import type Scene from './Scene';
-import type { Point, Material, LineMaterialConfig, Geometry } from '../interfaces/Decartes';
+import type { Point, Material, LineMaterialConfig, Geometry } from '../interfaces';
 export declare class DrawObject {
     geometry: Geometry;
     material: Material;

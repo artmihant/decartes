@@ -1,5 +1,5 @@
 import Color from "./Color"
-import type {Material, LineMaterialConfig} from '../interfaces/Decartes'
+import type {Material, LineMaterialConfig} from '../interfaces'
 
 export class LineMaterial implements Material{
 

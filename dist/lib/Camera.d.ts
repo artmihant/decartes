@@ -1,5 +1,5 @@
 import Vector from "./Vector";
-import type { pair, Point } from '../interfaces/Decartes';
+import type { pair, Point } from '../interfaces';
 export default class Camera {
     default: {
         center: pair;

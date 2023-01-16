@@ -1,6 +1,6 @@
 import Vector from "./Vector";
 import type Camera from './Camera'
-import type {Geometry, Point} from '../interfaces/Decartes'
+import type {Geometry, Point} from '../interfaces'
 
 
 export class LineSegmentGeometry implements Geometry {

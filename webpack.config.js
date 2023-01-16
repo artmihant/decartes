@@ -1,17 +1,21 @@
 const path = require('path');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-module.exports = ({ development }) => ({
+module.exports = {
   entry: './src/decartes.ts',
-  devtool: development ? 'inline-source-map' : false,
-  mode: development ? 'development' : 'production',
   output: {
-    filename: 'decartes.js',
     path: path.resolve(__dirname, 'dist'),
-    library: 'decartes',
+    filename: 'decartes.js',
+    library: {
+      name: 'decartes',
+      type: 'CommonJS',
+      export: 'default'
+    },
   },
+  devtool: 'inline-source-map',
+  mode: 'development',
   resolve: {
-    extensions: ['.ts'],
+    extensions: ['.ts', '.js'],
   },
   module: {
     rules: [
@@ -23,4 +27,4 @@ module.exports = ({ development }) => ({
     ],
   },
   plugins: [new ESLintPlugin({ extensions: ['ts'] })],
-});
+};

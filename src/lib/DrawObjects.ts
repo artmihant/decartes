@@ -2,7 +2,7 @@
 import {LineSegmentGeometry} from './Geometries'
 import {LineMaterial} from './Materials'
 import type Scene from './Scene'
-import type {Point, Material, LineMaterialConfig, Geometry} from '../interfaces/Decartes'
+import type {Point, Material, LineMaterialConfig, Geometry} from '../interfaces'
 import Vector from "./Vector"
 
 
