@@ -25,7 +25,3 @@ export default {
     LineMaterial,
     DrawObject, LineSegment
 };
-
-// export function test(){
-//     return 1
-// }

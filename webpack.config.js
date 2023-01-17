@@ -1,16 +1,17 @@
-const path = require('path');
-const ESLintPlugin = require('eslint-webpack-plugin');
+import { resolve as _resolve } from 'path';
+import ESLintPlugin from 'eslint-webpack-plugin';
 
-module.exports = {
+export default ({ development }) => ({
   entry: './src/decartes.ts',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: _resolve(__dirname, 'dist'),
     filename: 'decartes.js',
     library: {
       name: 'decartes',
-      type: 'CommonJS',
+      type: 'umd',
       export: 'default'
     },
+    umdNamedDefine: true
   },
   devtool: 'inline-source-map',
   mode: 'development',
@@ -27,4 +28,4 @@ module.exports = {
     ],
   },
   plugins: [new ESLintPlugin({ extensions: ['ts'] })],
-};
+})
