@@ -1,6 +1,6 @@
 {
   "name": "decartes",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Descartes is a simple and fast canvas drawing engine.",
   "main": "dist/decartes.js",
   "types": "dist/decartes.d.ts",
